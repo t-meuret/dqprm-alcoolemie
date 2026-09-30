@@ -2,7 +2,7 @@
 
 TP Python réalisé en binôme (DQPRM 2026-2028).
 
-Exercice 8 du notebook `Exercices.ipynb` : étude de l'absorption et de l'élimination de l'alcool, puis calcul du moment où Alice peut reprendre le volant après deux bières.
+Exercice 8 du notebook `Exercices.ipynb` : étude de l'absorption et de l'élimination de l'alcool, puis calcul du moment où Alice peut reprendre le volant après deux bières. Boire ou conduire, il faut choisir :)
 
 ## Binôme
 
