@@ -14,3 +14,18 @@ Meth = 2 * 12 + 6 * 1 + 16   # g/mol
 C0 = C0m / Meth
 print("La concentration massique de l'éthanol dans la bière est de {} g/L ".format(C0m))
 print("La concentration molaire de l'éthanol dans la bière est de {:0.3f} mol/L ".format(C0))
+
+# Question 6
+V0 = 0.5   # L
+Ve = 2 * V0
+Vs = 40    # L
+t = np.arange(0, 260, 0.5)
+c = C0 * Ve / Vs * (1 - np.exp(-k1 * t)) - k2 * t
+
+plt.figure(figsize=(8, 5))
+plt.plot(t, c)
+plt.xlabel("t (min)")
+plt.ylabel("concentration en éthanol dans le sang (mol/L)")
+plt.title("Alcoolémie d'Alice après deux bières")
+plt.grid()
+plt.show()
