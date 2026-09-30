@@ -33,3 +33,30 @@ plt.show()
 # Question 7
 cmax = c.max()
 print("La valeur de concentration en éthanol maximale d'Alice est de {:0.4f} mol/L".format(cmax))
+
+# Question 8
+tmax = t[c.argmax()]
+
+print("\n=== Question 8 ===\n")
+print("L'instant auquel la concentration en éthanol est maximale dans le sang d'Alice est t = {:0.1f} min\n".format(tmax))
+
+# Question 9
+# la limite légale est de 0,5 g/L, on la convertit en mol/L pour la comparer à c
+Climmass = 0.5   # g/L
+Climmol = Climmass / Meth
+
+print("=== Question 9 ===\n")
+print("Limite légale : {} g/L, soit {:0.4f} mol/L".format(Climmass, Climmol))
+print("Alcoolémie maximale d'Alice : {:0.4f} mol/L, soit {:0.2f} g/L\n".format(cmax, cmax * Meth))
+if cmax > Climmol:
+    print("Conclusion : Alice n'a pas le droit de conduire à ce moment là\n")
+else:
+    print("Conclusion : Alice a le droit de conduire à ce moment là\n")
+
+# Question 10
+# premier instant après le maximum où l'alcoolémie repasse sous la limite
+condition = (t > tmax) & (c < Climmol)
+tok = t[condition][0]
+
+print("=== Question 10 ===\n")
+print("Le temps au bout duquel Alice aura le droit de prendre le volant est t = {:0.1f} min (soit {:0.1f} h)".format(tok, tok / 60))
