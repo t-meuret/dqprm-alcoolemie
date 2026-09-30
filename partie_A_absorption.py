@@ -24,3 +24,7 @@ plt.ylabel("ln(c1/c10)")
 plt.legend()
 plt.grid()
 plt.show()
+
+# Question 2
+tdemi1 = np.log(2) / k1
+print("Le temps de demi-réaction vaut {:0.3f} min".format(tdemi1))
