@@ -29,3 +29,7 @@ plt.ylabel("concentration en éthanol dans le sang (mol/L)")
 plt.title("Alcoolémie d'Alice après deux bières")
 plt.grid()
 plt.show()
+
+# Question 7
+cmax = c.max()
+print("La valeur de concentration en éthanol maximale d'Alice est de {:0.4f} mol/L".format(cmax))
