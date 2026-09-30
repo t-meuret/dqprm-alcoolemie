@@ -23,12 +23,26 @@ print("  - ordre 1, ln(c2/c20) = f(t) : |r| = {:0.6f}\n".format(abs(lr1.rvalue))
 print("Conclusion : c2 diminue de 0,0087 mol/L toutes les 120 min, la réaction est d'ordre 0\n")
 print("La constante de vitesse de la réaction d'élimination vaut k2 = {:0.3e} mol.L-1.min-1\n".format(k2))
 
+plt.figure(figsize=(12, 5))
+
+plt.subplot(1, 2, 1)
 plt.plot(t2, c2, 'o', label="mesures")
-plt.plot(t2, lr0.intercept + lr0.slope * t2, label="régression linéaire")
+plt.plot(t2[:-1], lr0.intercept + lr0.slope * t2[:-1], label="régression linéaire")
 plt.xlabel("t (min)")
 plt.ylabel("c2 (mol/L)")
+plt.title("Ordre 0 : c2 = f(t) est une droite")
 plt.legend()
 plt.grid()
+
+plt.subplot(1, 2, 2)
+plt.plot(t2[:-1], np.log(c2[:-1] / c2[0]), 'o', label="mesures")
+plt.plot(t2[:-1], lr1.intercept + lr1.slope * t2[:-1], label="régression linéaire")
+plt.xlabel("t (min)")
+plt.ylabel("ln(c2/c20)")
+plt.title("Ordre 1 : ln(c2/c20) = f(t) n'est pas une droite")
+plt.legend()
+plt.grid()
+
 plt.show()
 
 # Question 4
